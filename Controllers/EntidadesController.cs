@@ -31,6 +31,27 @@ namespace csharpapigenerica.Controllers
             _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
         }
 
+        /// <summary>
+/// Endpoint de la raíz de la API.
+/// Muestra un mensaje de bienvenida con información básica sobre la API.
+/// </summary>
+/// <returns>Un mensaje JSON con información de la API.</returns>
+[AllowAnonymous] // Permite acceso sin autenticación
+[HttpGet("/")]
+public IActionResult Inicio()
+{
+    var mensaje = new
+    {
+        Mensaje = "Bienvenido a la API Genérica en C#!",
+        Documentación = "Para más detalles, visita /swagger",
+        FechaServidor = DateTime.UtcNow
+    };
+
+    return Ok(mensaje);
+
+}
+
+
 
 
         /// <summary>
@@ -798,3 +819,4 @@ Códigos de estado HTTP:
 - 510 No extendido: Se requiere la extensión adicional de las políticas de acceso.
 - 511 Se requiere autenticación de red: El cliente debe autenticar la red para poder acceder al recurso.
 */
+ 
