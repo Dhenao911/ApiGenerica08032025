@@ -2,7 +2,8 @@ using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using csharpapi.Services;
+using Microsoft.AspNetCore.Hosting;
+using csharpapigenerica.Services;
 using Microsoft.OpenApi.Models;
 
 
